@@ -50,9 +50,11 @@ void setup() {
 } 
 
 void loop() {
-  if(button == HIGH){
-    digitalWrite(relay,HIGH);
-  }
+  if (digitalRead(button) == HiGH) {
+        digitalWrite(relay, HIGH);
+    } else {
+        digitalWrite(relay, LOW);
+    }
 
   MDNS.update();
   server.handleClient(); 
